@@ -10,6 +10,11 @@ export class ParloConIlBackend {
 
   faccioRequestATuttiVideogames()
   {
-    this.http.get("/api/videogames")
+    this.http.get("/api/videogames");
+  }
+
+  faccioRequestACoseVideogames(id:any, type:any)
+  {
+    this.http.get(`/api/videogames/${id}/${type}`);
   }
 }

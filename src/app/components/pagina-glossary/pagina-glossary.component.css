@@ -53,20 +53,6 @@
 }
 
 
-.buttonMenuTendina
-{
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.finestrina
-{
-  align-items: center;
-  justify-content: center;
-}
-
 .genres.genre2{
   content: url("https://i.postimg.cc/9FRcvPDx/platformer.webp");
 }

@@ -1,0 +1,130 @@
+.glossarycontainer
+{
+  max-width: 600px;
+  display: inline-flex;
+  flex-direction: column;
+}
+.glossarycontainer h3 {
+  margin-top: 30px;
+  color: #f78528;
+}
+
+.glossarycontainer div {
+  margin-bottom: 10px;
+}
+
+.glossarycontainer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.glossarycontainer th,
+.glossarycontainer td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd ;
+}
+
+.glossarycontainer p {
+  margin-bottom: 15px;
+}
+
+.glossarycontainer ul {
+  margin-left: 20px;
+}
+
+.glossarycontainer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.genres
+{
+  margin-right:5px;
+  width: 25px;
+  height: 25px;
+}
+.genres:hover{
+  transform: scale(1.5);
+  z-index: 111;
+  box-shadow: 0px 0px 6px 4px #ffffff, 0px 0px 40px #ffffff;
+  background-color: white;
+}
+
+
+.buttonMenuTendina
+{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.finestrina
+{
+  align-items: center;
+  justify-content: center;
+}
+
+.genres.genre2{
+  content: url("https://i.postimg.cc/9FRcvPDx/platformer.webp");
+}
+.genres.genre3{
+  content: url("https://i.postimg.cc/dtbJv7dJ/racing.webp");
+}
+.genres.genre4{
+  content: url("https://i.postimg.cc/7ZSwLxM0/rpg.webp");
+}
+.genres.genre7{
+  content: url("https://i.postimg.cc/s2czpwL2/shotter.webp");
+}
+.genres.genre8{
+  content: url("https://i.postimg.cc/GtNd4t5J/fighting.webp");
+}
+.genres.genre9{
+  content: url("https://i.postimg.cc/W31vS0Rw/stealth.webp");
+}
+.genres.genre10{
+  content: url("https://i.postimg.cc/6QLWM98t/action.webp");
+}
+.genres.genre11{
+  content: url("https://i.postimg.cc/TwdRSZbm/adventure.webp");
+}
+.genres.genre12{
+  content: url("https://i.postimg.cc/qqtdH0vt/survival.webp");
+}
+.genres.genre13{
+  content: url("https://i.postimg.cc/nz3Ht0KW/horror.webp");
+}
+.genres.genre14{
+  content: url("https://i.postimg.cc/SQtyT1x2/puzzle.webp");
+}
+.genres.genre15{
+  content: url("https://i.postimg.cc/J09C1gsp/visual-novel.webp");
+}
+.genres.genre16{
+  content: url("https://i.postimg.cc/k4YdHDq3/strategy.webp");
+}
+.genres.genre25
+{
+  content: url("https://i.postimg.cc/Vv5zsnDk/open-world.webp");
+}
+.genres.genre26{
+  content: url("https://i.postimg.cc/yNNrkHwv/monstercollector.png");
+}
+.genres.genre30{
+  content: url("https://i.postimg.cc/y8jb1drD/metroidvania.png");
+}
+.genres.genre31{
+  content: url("https://i.postimg.cc/k5hYSHC9/soulslike.png");
+}
+.genres.genre32{
+  content: url("https://i.postimg.cc/Wb5XJKT3/roguelike.png");
+}
+.genres.genre34{
+  content: url("https://i.postimg.cc/fRDPQX54/deckbuilder.png");
+}
+.genres.genre35{
+  content: url("https://i.postimg.cc/1zPPnLJT/sandbox.webp");
+}

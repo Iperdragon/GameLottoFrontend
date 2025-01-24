@@ -5,5 +5,19 @@
   src="{{videogame?.cover}}"
   height="320" width="320"
 >
-<input type="text" class="position-absolute" style="top:72%; left:44%" [(ngModel)]="answer">
+
+<div class="container">
+<div class="autocomplete">
+<input (input)="onInputChange(answer)" type="text" class="position-absolute" style="top:72%; left:44%" [(ngModel)]="answer">
+<ul *ngIf="filteredOptions.length > 0" class="dropdown">
+  <li
+    *ngFor="let option of filteredOptions"
+    (click)="selectOption(option)"
+    class="dropdown-item"
+  >
+    {{ option }}
+  </li>
+</ul>
+</div>
 <button (click)="controllaRisposta()" class="position-absolute" style="top:80%; left:48%">Rispondi</button>
+</div>

@@ -49,18 +49,12 @@ export class PaginaSpecsComponent
       if(this.step<this.maxStep)
       {
         this.step++;
-        this.blurImg3();
       }
       else
       {
         this.terminaGame3();
       }
     }
-  }
-
-
-  private blurImg3() {
-
   }
 
   private terminaGame3() {

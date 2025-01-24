@@ -2,13 +2,16 @@ import {Component, ElementRef, Renderer2} from '@angular/core';
 import {RoundLoaderService} from '../../services/round-loader.service';
 import {VideogameDTORespCover} from '../../model/VideogameDTORespCover';
 import {FormsModule} from '@angular/forms';
-import {NgStyle} from '@angular/common';
+import {NgForOf, NgIf, NgStyle} from '@angular/common';
+import {AutofillerService} from '../../services/autofiller.service';
 
 @Component({
   selector: 'app-pagina-cover',
   imports: [
     FormsModule,
-    NgStyle
+    NgStyle,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './pagina-cover.component.html',
   standalone: true,
@@ -16,7 +19,7 @@ import {NgStyle} from '@angular/common';
 })
 export class PaginaCoverComponent {
 
-  maxStep:number=9;
+  maxStep:number=6;
   step:number=0;
   idsUsed:number[]=[];
   videogame:VideogameDTORespCover|null=null;
@@ -24,6 +27,7 @@ export class PaginaCoverComponent {
 
   constructor(
     private loader: RoundLoaderService,
+    private auto:AutofillerService,
     private renderer: Renderer2,
     private el: ElementRef
   ) {
@@ -79,5 +83,19 @@ export class PaginaCoverComponent {
     if (imgElement) {
       this.renderer.setStyle(imgElement, 'filter', `blur(${blurAmount}px)`);
     }
+  }
+
+  filteredOptions: string[] = [];
+
+  onInputChange(value: string): void {
+    this.answer = value;
+    this.filteredOptions = this.auto.frasi.filter(option =>
+      option.toLowerCase().includes(value.toLowerCase())
+    );
+  }
+
+  selectOption(option: string): void {
+    this.answer = option;
+    this.filteredOptions = [];
   }
 }

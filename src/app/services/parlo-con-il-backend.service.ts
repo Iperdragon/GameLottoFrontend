@@ -17,4 +17,9 @@ export class ParloConIlBackend {
   {
     this.http.get(`/api/videogames/${id}/${type}`);
   }
+
+  faccioRequestACosePGS(id:any)
+  {
+    this.http.get(`/api/pgs/${id}`);
+  }
 }

@@ -22,4 +22,9 @@ export class RoundLoaderService {
   {
     return this.http.post("/api/videogames/spec", ids);
   }
+
+  loadPG(ids:number[])
+  {
+    return this.http.post("/api/pgs", ids);
+  }
 }

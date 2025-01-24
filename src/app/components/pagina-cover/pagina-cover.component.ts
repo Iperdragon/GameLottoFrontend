@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 })
 export class PaginaCoverComponent {
 
+  maxStep:number=9;
   step:number=0;
   idsUsed:number[]=[];
   videogame:VideogameDTORespCover|null=null;
@@ -31,12 +32,39 @@ export class PaginaCoverComponent {
         {
             this.step = 0;
             this.videogame = res as VideogameDTORespCover;
-            if(this.videogame.name==this.answer)
-            {
-              this.idsUsed.push(this.videogame!.id!);
-            }
         }
       )
   }
 
+  controllaRisposta()
+  {
+    if(this.videogame!.name==this.answer)
+    {
+      this.idsUsed.push(this.videogame!.id!);
+      this.caricaRound()
+    }
+    else
+    {
+      if(this.step<this.maxStep)
+      {
+        this.step++;
+        this.blurImg();
+      }
+      else
+      {
+        this.terminaGame();
+      }
+    }
+  }
+
+  private terminaGame()
+  {
+
+  }
+
+  // deve blurrare immagine in base al valore di step
+  private blurImg()
+  {
+
+  }
 }

@@ -4,6 +4,15 @@
   display: inline-flex;
   flex-direction: column;
 }
+
+.container-fluid
+{
+  text-align: center !important;
+  padding: 10px 0 100px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 80dvh;
+}
 .glossarycontainer h3 {
   margin-top: 30px;
   color: #f78528;
@@ -106,7 +115,7 @@
   content: url("https://i.postimg.cc/k5hYSHC9/soulslike.png");
 }
 .genres.genre32{
-  content: url("https://i.postimg.cc/Wb5XJKT3/roguelike.png");
+  content: url("https://i.postimg.cc/63Vh6bMB/roguelike.png");
 }
 .genres.genre34{
   content: url("https://i.postimg.cc/fRDPQX54/deckbuilder.png");

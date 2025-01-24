@@ -4,12 +4,16 @@ import {RegisterComponent} from './components/register/register.component';
 import {HomepageComponent} from './components/homepage/homepage.component';
 import {PaginaCoverComponent} from './components/pagina-cover/pagina-cover.component';
 import {PaginaGlossaryComponent} from './components/pagina-glossary/pagina-glossary.component';
+import {PaginaSpecsComponent} from './components/pagina-specs/pagina-specs.component';
+import {PaginaSoundtrackComponent} from './components/pagina-soundtrack/pagina-soundtrack.component';
 
 export const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:'',component:HomepageComponent},
   {path: 'cover',component:PaginaCoverComponent},
-  {path: 'glossary',component:PaginaGlossaryComponent}
+  {path: 'glossary',component:PaginaGlossaryComponent},
+  {path:'spec', component:PaginaSpecsComponent},
+  {path:'soundtrack', component:PaginaSoundtrackComponent}
 
 ];

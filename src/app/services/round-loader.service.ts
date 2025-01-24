@@ -12,4 +12,14 @@ export class RoundLoaderService {
   {
     return this.http.post("/api/videogames/cover", ids);
   }
+
+  loadSound(ids:number[])
+  {
+    return this.http.post("/api/videogames/soundtrack", ids);
+  }
+
+  loadSpec(ids:number[])
+  {
+    return this.http.post("/api/videogames/spec", ids);
+  }
 }

@@ -57,8 +57,8 @@
 .genres:hover{
   transform: scale(1.5);
   z-index: 111;
-  box-shadow: 0px 0px 6px 4px #ffffff, 0px 0px 40px #ffffff;
-  background-color: white;
+  box-shadow: 0px 0px 6px 4px #007bff, 0px 0px 40px #007bff;
+  background-color: red;
 }
 
 

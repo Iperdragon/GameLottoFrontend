@@ -1,4 +1,7 @@
-cover.pagina-cover
+/*#img2
 {
-{}
-}
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  transition: -webkit-filter 0.5s ease-in;
+}*/
+

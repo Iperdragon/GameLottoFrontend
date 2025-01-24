@@ -13,7 +13,7 @@ export class PaginaSoundtrackComponent
 {
   step:number=0;
   idsUsed:number[]=[];
-  videogame:VideogameDTORespSound|null=null;
+  sound:VideogameDTORespSound|null=null;
 
   constructor(private loader:RoundLoaderService)
   {
@@ -26,8 +26,8 @@ export class PaginaSoundtrackComponent
       res=>
       {
         this.step=0;
-        this.videogame=res as VideogameDTORespSound;
-        this.idsUsed.push(this.videogame!.id!);
+        this.sound=res as VideogameDTORespSound;
+        this.idsUsed.push(this.sound!.id!);
       }
     )
   }

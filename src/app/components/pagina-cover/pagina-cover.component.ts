@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, Renderer2} from '@angular/core';
 import {RoundLoaderService} from '../../services/round-loader.service';
 import {VideogameDTORespCover} from '../../model/VideogameDTORespCover';
 import {FormsModule} from '@angular/forms';
+import {NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-pagina-cover',
   imports: [
-    FormsModule
+    FormsModule,
+    NgStyle
   ],
   templateUrl: './pagina-cover.component.html',
   standalone: true,
@@ -20,8 +22,11 @@ export class PaginaCoverComponent {
   videogame:VideogameDTORespCover|null=null;
   answer:string="";
 
-  constructor(private loader:RoundLoaderService)
-  {
+  constructor(
+    private loader: RoundLoaderService,
+    private renderer: Renderer2,
+    private el: ElementRef
+  ) {
     this.caricaRound();
   }
 
@@ -32,6 +37,7 @@ export class PaginaCoverComponent {
         {
             this.step = 0;
             this.videogame = res as VideogameDTORespCover;
+            this.setBlur(10);
         }
       )
   }
@@ -48,7 +54,7 @@ export class PaginaCoverComponent {
       if(this.step<this.maxStep)
       {
         this.step++;
-        this.blurImg();
+        this.updateBlur();
       }
       else
       {
@@ -57,14 +63,21 @@ export class PaginaCoverComponent {
     }
   }
 
-  private terminaGame()
-  {
-
+  private terminaGame(): void {
+    alert('Game Over!');
   }
 
-  // deve blurrare immagine in base al valore di step
-  private blurImg()
-  {
+  private updateBlur(): void {
+    // Calcola il nuovo livello di blur in base allo step
+    const maxBlur = 10;
+    const blurAmount = maxBlur - (this.step / this.maxStep) * maxBlur;
+    this.setBlur(blurAmount);
+  }
 
+  private setBlur(blurAmount: number): void {
+    const imgElement = this.el.nativeElement.querySelector('#img2');
+    if (imgElement) {
+      this.renderer.setStyle(imgElement, 'filter', `blur(${blurAmount}px)`);
+    }
   }
 }

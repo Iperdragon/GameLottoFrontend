@@ -43,7 +43,7 @@ export class PaginaCharactersComponent
   {
     if(this.pg!.game==this.answer)
     {
-      this.idsUsed.push(this.pg!.id!)
+      this.idsUsed.push(this.pg!.id!);
       this.caricaRound4();
     }
     else

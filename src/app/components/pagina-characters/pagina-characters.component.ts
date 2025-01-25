@@ -3,6 +3,7 @@ import {VideogameDTORespCover} from '../../model/VideogameDTORespCover';
 import {PGDTOResp} from '../../model/PGDTOResp';
 import {RoundLoaderService} from '../../services/round-loader.service';
 import {FormsModule} from '@angular/forms';
+import {VideogameDTORespCompl} from '../../model/VideogameDTORespCompl';
 
 @Component({
   selector: 'app-pagina-characters',
@@ -40,7 +41,7 @@ export class PaginaCharactersComponent
 
   controllaRisposta2()
   {
-    if(this.pg!.name==this.answer)
+    if(this.pg!.game==this.answer)
     {
       this.idsUsed.push(this.pg!.id!);
       this.caricaRound4();
@@ -50,19 +51,12 @@ export class PaginaCharactersComponent
       if(this.step<this.maxStep)
       {
         this.step++;
-        this.blurImg2();
       }
       else
       {
         this.terminaGame2();
       }
     }
-  }
-
-
-  private blurImg2()
-  {
-
   }
 
   private terminaGame2()

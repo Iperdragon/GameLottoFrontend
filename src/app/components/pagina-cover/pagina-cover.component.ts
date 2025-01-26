@@ -45,7 +45,7 @@ export class PaginaCoverComponent {
             this.videogame = res as VideogameDTORespCover;
             this.setBlur(10);
             this.mostraProssimo = false;
-            this.hearts=Array(4).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
+            this.hearts=Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
         }
       )
   }
@@ -68,6 +68,7 @@ export class PaginaCoverComponent {
       }
       else
       {
+          this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
           this.terminaGame();
       }
     }

@@ -19,6 +19,8 @@ import {AutofillerService} from '../../services/autofiller.service';
 })
 export class PaginaCoverComponent {
 
+  mostraReStart: boolean = false;
+  mostraProssimo: boolean = false;
   maxStep:number=6;
   step:number=0;
   idsUsed:number[]=[];
@@ -42,6 +44,7 @@ export class PaginaCoverComponent {
             this.step = 0;
             this.videogame = res as VideogameDTORespCover;
             this.setBlur(10);
+            this.mostraProssimo = false;
         }
       )
   }
@@ -51,7 +54,8 @@ export class PaginaCoverComponent {
     if(this.videogame!.name==this.answer)
     {
       this.idsUsed.push(this.videogame!.id!);
-      this.caricaRound()
+      this.setBlur(0);
+      this.mostraProssimo = true;
     }
     else
     {
@@ -69,6 +73,14 @@ export class PaginaCoverComponent {
 
   private terminaGame(): void {
     alert('Game Over!');
+    this.mostraReStart = true;
+  }
+
+  restartGame(): void {
+    this.idsUsed = [];
+    this.step=0;
+    this.mostraReStart=false;
+    this.caricaRound();
   }
 
   private updateBlur(): void {

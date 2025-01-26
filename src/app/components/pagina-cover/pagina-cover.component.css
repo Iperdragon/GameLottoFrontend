@@ -5,7 +5,6 @@
   transition: -webkit-filter 0.5s ease-in;
 }*/
 .autocomplete {
-  position: absolute;
   width: 300px;
 }
 
@@ -38,4 +37,35 @@ input {
 
 .dropdown-item:hover {
   background-color: #f0f0f0;
+}
+
+.cover-container {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center;    /* Centra verticalmente */
+  height: 60vh;          /* L'altezza del contenitore occupa l'intera viewport */
+  position: relative;     /* Per mantenere posizioni assolute degli elementi interni */
+  background-color: #f4f4f4; /* Colore di sfondo opzionale */
+}
+
+.cover {
+  max-width: 100%; /* Assicura che l'immagine non superi le dimensioni del contenitore */
+  max-height: 100%; /* Mantiene proporzioni e adatta l'immagine */
+  filter: blur(10px); /* Blur iniziale */
+  transition: filter 0.5s ease; /* Transizione fluida quando il blur cambia */
+}
+
+.input-container{
+  width:100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+.input-container input {
+  width: 100%; /* L'input occupa tutta la larghezza del contenitore */
+  padding: 10px; /* Aggiunge un po' di spazio interno */
+  font-size: 16px; /* Dimensione del testo */
+  border: 1px solid #ccc; /* Bordo leggero */
+  border-radius: 5px; /* Angoli arrotondati */
+  box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
 }

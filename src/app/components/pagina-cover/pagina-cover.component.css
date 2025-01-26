@@ -45,7 +45,6 @@ input {
   align-items: center;    /* Centra verticalmente */
   height: 60vh;          /* L'altezza del contenitore occupa l'intera viewport */
   position: relative;     /* Per mantenere posizioni assolute degli elementi interni */
-  background-color: #f4f4f4; /* Colore di sfondo opzionale */
 }
 
 .cover {
@@ -68,4 +67,15 @@ input {
   border: 1px solid #ccc; /* Bordo leggero */
   border-radius: 5px; /* Angoli arrotondati */
   box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
+}
+
+.heart-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.heart {
+  width: 40px; /* Dimensione dei cuori */
+  height: 40px;
 }

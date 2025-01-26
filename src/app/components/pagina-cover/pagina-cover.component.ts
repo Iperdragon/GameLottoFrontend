@@ -18,7 +18,7 @@ import {AutofillerService} from '../../services/autofiller.service';
   styleUrl: './pagina-cover.component.css'
 })
 export class PaginaCoverComponent {
-
+  hearts: string[] = Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png'); // Percorso immagine cuore pieno
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
   maxStep:number=5;
@@ -45,6 +45,7 @@ export class PaginaCoverComponent {
             this.videogame = res as VideogameDTORespCover;
             this.setBlur(10);
             this.mostraProssimo = false;
+            this.hearts=Array(4).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
         }
       )
   }
@@ -61,6 +62,7 @@ export class PaginaCoverComponent {
     {
       if(this.step<this.maxStep-1)
       {
+        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
         this.step++;
         this.updateBlur();
       }

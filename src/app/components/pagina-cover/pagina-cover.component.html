@@ -10,6 +10,11 @@
 </div>
 
 
+
+<div class="heart-container position-absolute" style="top:10%; left:50%; transform:translate(-50%, -50%); display: flex; gap: 10px;">
+  <img *ngFor="let heart of hearts" [src]="heart" class="heart" alt="heart" />
+</div>
+
   <div class="button-container">
   <button *ngIf="mostraReStart"(click)="restartGame()" class="position-absolute" style="top:90%; left:38%">Restart</button>
   <button (click)="controllaRisposta()" class="position-absolute" style="top:90%; left:48%">Rispondi</button>

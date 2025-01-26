@@ -21,7 +21,7 @@ export class PaginaCoverComponent {
 
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
-  maxStep:number=6;
+  maxStep:number=5;
   step:number=0;
   idsUsed:number[]=[];
   videogame:VideogameDTORespCover|null=null;
@@ -59,14 +59,14 @@ export class PaginaCoverComponent {
     }
     else
     {
-      if(this.step<this.maxStep)
+      if(this.step<this.maxStep-1)
       {
         this.step++;
         this.updateBlur();
       }
       else
       {
-        this.terminaGame();
+          this.terminaGame();
       }
     }
   }

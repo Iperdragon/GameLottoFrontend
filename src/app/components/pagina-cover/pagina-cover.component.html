@@ -5,15 +5,15 @@
   class="cover"
   src="{{videogame?.cover}}"
   alt="videogame Cover"
-  height="420" width="420"
+  height="320" width="320"
 />
 </div>
 
 
   <div class="button-container">
-  <button *ngIf="mostraReStart"(click)="restartGame()" class="position-absolute" style="top:80%; left:38%">Restart</button>
-  <button (click)="controllaRisposta()" class="position-absolute" style="top:80%; left:48%">Rispondi</button>
-  <button *ngIf="mostraProssimo"(click)="caricaRound()" class="position-absolute" style="top:80%; left:58%">Prossimo</button>
+  <button *ngIf="mostraReStart"(click)="restartGame()" class="position-absolute" style="top:90%; left:38%">Restart</button>
+  <button (click)="controllaRisposta()" class="position-absolute" style="top:90%; left:48%">Rispondi</button>
+  <button *ngIf="mostraProssimo"(click)="caricaRound()" class="position-absolute" style="top:90%; left:58%">Prossimo</button>
   </div>
 
 <div class="container">

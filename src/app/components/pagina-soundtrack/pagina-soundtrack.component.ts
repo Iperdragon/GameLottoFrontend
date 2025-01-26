@@ -2,12 +2,17 @@ import { Component } from '@angular/core';
 import {VideogameDTORespSound} from '../../model/VideogameDTORespSound';
 import {RoundLoaderService} from '../../services/round-loader.service';
 import {HttpClient} from '@angular/common/http';
-import {NgIf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AutofillerService} from '../../services/autofiller.service';
 
 @Component({
   selector: 'app-pagina-soundtrack',
   imports: [
-    NgIf
+    NgIf,
+    NgForOf,
+    ReactiveFormsModule,
+    FormsModule
   ],
   templateUrl: './pagina-soundtrack.component.html',
   standalone: true,
@@ -15,11 +20,18 @@ import {NgIf} from '@angular/common';
 })
 export class PaginaSoundtrackComponent
 {
+  hearts: string[] = Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png'); // Percorso immagine cuore pieno
+  mostraReStart: boolean = false;
+  mostraProssimo: boolean = false;
+  maxStep:number=5;
   step:number=0;
   idsUsed:number[]=[];
   sound:VideogameDTORespSound|null=null;
+  answer:string="";
 
-  constructor(private loader:RoundLoaderService, private http:HttpClient)
+  constructor(private loader:RoundLoaderService,
+              private http:HttpClient,
+              private auto:AutofillerService)
   {
     this.caricaRound2();
   }
@@ -31,9 +43,58 @@ export class PaginaSoundtrackComponent
       {
         this.step=0;
         this.sound=res as VideogameDTORespSound;
-        this.idsUsed.push(this.sound!.id!);
+        this.errorMessage=null;
+        this.mostraProssimo = false;
+        this.hearts=Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
       }
     )
+  }
+
+  controllaRisposta3()
+  {
+    if(this.sound!.name==this.answer)
+    {
+      this.idsUsed.push(this.sound!.id!);
+      this.mostraProssimo = true;
+    }
+    else
+    {
+      if(this.step<this.maxStep-1)
+      {
+        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.step++;
+      }
+      else
+      {
+        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.terminaGame3();
+      }
+    }
+  }
+
+  private terminaGame3(): void {
+    alert('Game Over!');
+    this.mostraReStart = true;
+  }
+
+  restartGame3(): void {
+    this.idsUsed = [];
+    this.step=0;
+    this.mostraReStart=false;
+    this.caricaRound2();
+  }
+
+  filteredOptions: string[] = [];
+
+  onInputChange(value: string): void {
+    this.answer = value;
+    this.filteredOptions = this.auto.frasi.filter(option =>
+      option.toLowerCase().includes(value.toLowerCase())
+    );
+  }
+  selectOption(option: string): void {
+    this.answer = option;
+    this.filteredOptions = [];
   }
 
   audio: HTMLAudioElement = new Audio();

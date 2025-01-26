@@ -1,14 +1,40 @@
-<div class="audio-player">
-  <div>
+<div class="sound-container">
+  <div class="audio-player">
+    <div>
 
-    <button (click)="playAudio()">Play</button>
-    <button (click)="stopAudio()" [disabled]="!isPlaying">Stop</button>
+      <button (click)="playAudio()">Play</button>
+      <button (click)="stopAudio()" [disabled]="!isPlaying">Stop</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <p *ngIf="isPlaying">Riproduzione in corso...</p>
   </div>
-
-  <div *ngIf="errorMessage" class="error">
-    {{ errorMessage }}
-  </div>
-
-  <p *ngIf="isPlaying">Riproduzione in corso...</p>
 </div>
-<button (click)="caricaRound2()">Carica</button>
+
+<div class="heart-container position-absolute" style="top:77%; left:50%; transform:translate(-50%, -50%); display: flex; gap: 10px;">
+  <img *ngFor="let heart of hearts" [src]="heart" class="heart" alt="heart" />
+</div>
+
+<div class="button-container">
+  <button *ngIf="mostraReStart"(click)="restartGame3()" class="position-absolute" style="top:90%; left:38%">Restart</button>
+  <button (click)="controllaRisposta3()" class="position-absolute" style="top:90%; left:48%">Rispondi</button>
+  <button *ngIf="mostraProssimo"(click)="caricaRound2()" class="position-absolute" style="top:90%; left:58%">Prossimo</button>
+</div>
+
+<div class="container">
+  <div class="input-container position-absolute" style="top:85%; left:50%; transform:translate(-50%,-50%);">
+    <input (input)="onInputChange(answer)" type="text" [(ngModel)]="answer">
+    <ul *ngIf="filteredOptions.length > 0" class="dropdown">
+      <li
+        *ngFor="let option of filteredOptions"
+        (click)="selectOption(option)"
+        class="dropdown-item"
+      >
+        {{ option }}
+      </li>
+    </ul>
+  </div>
+</div>

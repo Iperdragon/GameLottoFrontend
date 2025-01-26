@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {VideogameDTORespCompl} from '../../model/VideogameDTORespCompl';
 import {NgForOf, NgIf} from '@angular/common';
 import {AutofillerService} from '../../services/autofiller.service';
+import {AutoFillerPgService} from '../../services/auto-filler-pg.service';
 
 @Component({
   selector: 'app-pagina-characters',
@@ -31,7 +32,7 @@ export class PaginaCharactersComponent
   answer:string="";
 
   constructor(private loader:RoundLoaderService,
-              private auto:AutofillerService,)
+              private auto:AutoFillerPgService,)
   {
     this.caricaRound4();
   }

@@ -4,16 +4,17 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AutofillerService {
+export class AutoFillerPgService {
 
-  frasi:string[]=[]
+  frasiPg:string[]=[]
+
   constructor(private http:HttpClient)
   {
-    http.get<string[]>("/api/videogames/names").subscribe
+    http.get<string[]>("/api/pgs/games").subscribe
     (
       res=>
       {
-        this.frasi=res;
+        this.frasiPg=res;
       }
     )
   }

@@ -91,7 +91,7 @@ export class PaginaCharactersComponent
 
   onInputChange(value: string): void {
     this.answer = value;
-    this.filteredOptions = this.auto.frasi.filter(option =>
+    this.filteredOptions = this.auto.frasiPg.filter(option =>
       option.toLowerCase().includes(value.toLowerCase())
     );
   }

@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class AutofillerService {
 
   frasi:string[]=[]
+  frasiPg:string[]=[]
   constructor(private http:HttpClient)
   {
     http.get<string[]>("/api/videogames/names").subscribe
@@ -14,6 +15,14 @@ export class AutofillerService {
       res=>
       {
         this.frasi=res;
+      }
+    )
+
+    http.get<string[]>("/api/pgs/names").subscribe
+    (
+      res=>
+      {
+        this.frasiPg=res;
       }
     )
   }

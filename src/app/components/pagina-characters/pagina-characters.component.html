@@ -1,3 +1,37 @@
-<img class="position-absolute" style="top:20%; left:40%" src="{{pg?.img}}" height="320" width="320">
-<input type="text" class="position-absolute" style="top:72%; left:44%" [(ngModel)]="answer">
-<button (click)="controllaRisposta2()" class="position-absolute" style="top:80%; left:48%">Rispondi</button>
+<div class="pg-container">
+  <img
+    id="img2"
+    src="{{pg?.img}}"
+    alt="videogame Character"
+    height="320" width="320"
+  />
+</div>
+<div class="heart-container position-absolute" style="top:77%; left:50%; transform:translate(-50%, -50%); display: flex; gap: 10px;">
+  <img *ngFor="let heart of hearts" [src]="heart" class="heart" alt="heart" />
+</div>
+
+<div class="button-container">
+  <button *ngIf="mostraReStart"(click)="restartGame2()" class="position-absolute" style="top:90%; left:38%">Restart</button>
+  <button (click)="controllaRisposta2()" class="position-absolute" style="top:90%; left:48%">Rispondi</button>
+  <button *ngIf="mostraProssimo"(click)="caricaRound4()" class="position-absolute" style="top:90%; left:58%">Prossimo</button>
+</div>
+
+<div class="container">
+  <div class="input-container position-absolute" style="top:85%; left:50%; transform:translate(-50%,-50%);">
+    <input (input)="onInputChange(answer)" type="text" [(ngModel)]="answer">
+    <ul *ngIf="filteredOptions.length > 0" class="dropdown">
+      <li
+        *ngFor="let option of filteredOptions"
+        (click)="selectOption(option)"
+        class="dropdown-item"
+      >
+        {{ option }}
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="container position-absolute" style="top:50%; left:105%; transform:translate(-50%,-50%);">
+    <p *ngIf="mostraDescrizione">{{pg?.description}}</p>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.autocomplete {
+  width: 300px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.dropdown {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.pg-container {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center;    /* Centra verticalmente */
+  height: 60vh;          /* L'altezza del contenitore occupa l'intera viewport */
+  position: relative;     /* Per mantenere posizioni assolute degli elementi interni */
+}
+
+.input-container{
+  width:100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+.input-container input {
+  width: 100%; /* L'input occupa tutta la larghezza del contenitore */
+  padding: 10px; /* Aggiunge un po' di spazio interno */
+  font-size: 16px; /* Dimensione del testo */
+  border: 1px solid #ccc; /* Bordo leggero */
+  border-radius: 5px; /* Angoli arrotondati */
+  box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
+}
+
+.heart-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.heart {
+  width: 40px; /* Dimensione dei cuori */
+  height: 40px;
+}

@@ -28,13 +28,15 @@ export class PaginaSoundtrackComponent
   idsUsed:number[]=[];
   sound:VideogameDTORespSound|null=null;
   answer:string="";
-
+  imgPlay:string[]=["https://i.postimg.cc/KYByv5yQ/Pulsante-PLAY.webp", "https://i.postimg.cc/Z51SSMXC/Pulsante-PLAY-Active.webp"]
+  imgStop:string[]=["https://i.postimg.cc/VLZw76R9/Pulsante-STOP.webp", "https://i.postimg.cc/L68RBfz6/Pulsante-STOP-Active.webp"]
   constructor(private loader:RoundLoaderService,
               private http:HttpClient,
               private auto:AutofillerService)
   {
     this.caricaRound2();
   }
+
 
   caricaRound2()
   {

@@ -80,7 +80,8 @@ export class PaginaCharactersComponent
 
   private terminaGame2()
   {
-    alert('Game Over!');
+    alert('Game Over! ' + '\n'+
+      'Il gioco è: '+this.pg?.game);
     this.mostraReStart = true;
   }
 

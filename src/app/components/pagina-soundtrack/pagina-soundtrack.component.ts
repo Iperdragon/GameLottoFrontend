@@ -45,6 +45,7 @@ export class PaginaSoundtrackComponent
         this.sound=res as VideogameDTORespSound;
         this.errorMessage=null;
         this.mostraProssimo = false;
+        this.stopAudio();
         this.hearts=Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
       }
     )
@@ -76,7 +77,9 @@ export class PaginaSoundtrackComponent
   }
 
   private terminaGame3(): void {
-    alert('Game Over!');
+    alert('Game Over! ' + '\n'+
+          'Il gioco è: '+this.sound?.name);
+    this.stopAudio();
     this.mostraReStart = true;
   }
 
@@ -116,6 +119,7 @@ export class PaginaSoundtrackComponent
         this.audio.src = audioUrl;
         this.audio.load();
         this.audio.play();
+        this.audio.volume=0.2;
         this.isPlaying = true;
         this.errorMessage = null;
       },

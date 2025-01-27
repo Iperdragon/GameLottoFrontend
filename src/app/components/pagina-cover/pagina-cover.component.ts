@@ -82,7 +82,8 @@ export class PaginaCoverComponent {
   }
 
   private terminaGame(): void {
-    alert('Game Over!');
+    alert('Game Over! ' + '\n'+
+      'Il gioco è: '+this.videogame?.name);
     this.mostraReStart = true;
     this.setBlur(0);
   }
@@ -145,5 +146,4 @@ export class PaginaCoverComponent {
       this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp')"); // Cornice viola
     }
   }
-
 }

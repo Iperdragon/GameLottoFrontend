@@ -57,6 +57,7 @@ export class PaginaCoverComponent {
     {
       this.idsUsed.push(this.videogame!.id!);
       this.setBlur(0);
+      this.answer="";
       this.mostraProssimo = true;
       this.setGreenBorder();
     }
@@ -67,11 +68,13 @@ export class PaginaCoverComponent {
         this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
         this.step++;
         this.updateBlur();
+        this.answer="";
         this.flashRedBorder()
       }
       else
       {
           this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
+          this.answer="";
           this.flashRedBorder();
           this.terminaGame();
       }
@@ -87,13 +90,14 @@ export class PaginaCoverComponent {
     this.idsUsed = [];
     this.step=0;
     this.mostraReStart=false;
+    this.answer="";
     this.caricaRound();
   }
 
   private updateBlur(): void {
     // Calcola il nuovo livello di blur in base allo step
     const maxBlur = 10;
-    const blurAmount = maxBlur - (this.step / this.maxStep) * maxBlur;
+    const blurAmount = maxBlur - (this.step / this.maxStep) * maxBlur+4;
     this.setBlur(blurAmount);
   }
 

@@ -58,6 +58,7 @@ export class PaginaCharactersComponent
     {
       this.idsUsed.push(this.pg!.id!);
       this.mostraDescrizione=true;
+      this.answer="";
       this.mostraProssimo= true;
     }
     else
@@ -66,10 +67,12 @@ export class PaginaCharactersComponent
       {
         this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
         this.step++;
+        this.answer="";
       }
       else
       {
         this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.answer="";
         this.terminaGame2();
       }
     }
@@ -85,6 +88,7 @@ export class PaginaCharactersComponent
     this.idsUsed = [];
     this.step=0;
     this.mostraReStart=false;
+    this.answer="";
     this.caricaRound4();
   }
 

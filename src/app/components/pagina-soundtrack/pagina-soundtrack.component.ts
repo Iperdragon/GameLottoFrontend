@@ -56,17 +56,20 @@ export class PaginaSoundtrackComponent
     {
       this.idsUsed.push(this.sound!.id!);
       this.mostraProssimo = true;
+      this.answer="";
     }
     else
     {
       if(this.step<this.maxStep-1)
       {
         this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.answer="";
         this.step++;
       }
       else
       {
         this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.answer="";
         this.terminaGame3();
       }
     }
@@ -81,6 +84,7 @@ export class PaginaSoundtrackComponent
     this.idsUsed = [];
     this.step=0;
     this.mostraReStart=false;
+    this.answer="";
     this.caricaRound2();
   }
 

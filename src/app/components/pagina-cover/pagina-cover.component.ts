@@ -84,6 +84,7 @@ export class PaginaCoverComponent {
   private terminaGame(): void {
     alert('Game Over!');
     this.mostraReStart = true;
+    this.setBlur(0);
   }
 
   restartGame(): void {

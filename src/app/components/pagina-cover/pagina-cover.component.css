@@ -93,4 +93,16 @@ input {
 }
 
 
-
+.custom-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 340px;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

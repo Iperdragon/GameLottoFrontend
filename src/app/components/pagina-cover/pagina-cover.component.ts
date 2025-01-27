@@ -140,6 +140,7 @@ export class PaginaCoverComponent {
       this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/25KY8P4h/cornice-verde-semplice.webp')"); // Cornice verde
     }
   }
+
   private resetPurpleBorder(): void {
     const frameElement = this.el.nativeElement.querySelector('.custom-frame');
     if (frameElement) {

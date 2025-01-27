@@ -18,7 +18,7 @@ import {AutofillerService} from '../../services/autofiller.service';
   styleUrl: './pagina-cover.component.css'
 })
 export class PaginaCoverComponent {
-  hearts: string[] = Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png'); // Percorso immagine cuore pieno
+  hearts: string[] = Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp'); // Percorso immagine cuore pieno
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
   maxStep:number=5;
@@ -45,7 +45,8 @@ export class PaginaCoverComponent {
             this.videogame = res as VideogameDTORespCover;
             this.setBlur(10);
             this.mostraProssimo = false;
-            this.hearts=Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
+            this.resetPurpleBorder();
+            this.hearts=Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
         }
       )
   }
@@ -57,18 +58,21 @@ export class PaginaCoverComponent {
       this.idsUsed.push(this.videogame!.id!);
       this.setBlur(0);
       this.mostraProssimo = true;
+      this.setGreenBorder();
     }
     else
     {
       if(this.step<this.maxStep-1)
       {
-        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
         this.step++;
         this.updateBlur();
+        this.flashRedBorder()
       }
       else
       {
-          this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+          this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
+          this.flashRedBorder();
           this.terminaGame();
       }
     }
@@ -113,4 +117,28 @@ export class PaginaCoverComponent {
     this.answer = option;
     this.filteredOptions = [];
   }
+
+  private flashRedBorder(): void {
+    const frameElement = this.el.nativeElement.querySelector('.custom-frame');
+    if (frameElement) {
+      this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/jSvKBW28/cornice-rossa-semplice.webp')"); // Cambia a rosso
+      setTimeout(() => {
+        this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp')"); // Torna al blu
+      }, 200); // Torna blu dopo 500ms
+    }
+  }
+
+  private setGreenBorder(): void {
+    const frameElement = this.el.nativeElement.querySelector('.custom-frame');
+    if (frameElement) {
+      this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/25KY8P4h/cornice-verde-semplice.webp')"); // Cornice verde
+    }
+  }
+  private resetPurpleBorder(): void {
+    const frameElement = this.el.nativeElement.querySelector('.custom-frame');
+    if (frameElement) {
+      this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp')"); // Cornice viola
+    }
+  }
+
 }

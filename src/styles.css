@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Public Pixel";
+  src: url("/fonts/PublicPixel-rv0pA.ttf") format("truetype");
+}
+
+body {
+  font-family: "Public Pixel", sans-serif;
+}

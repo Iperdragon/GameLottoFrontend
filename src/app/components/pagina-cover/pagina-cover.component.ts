@@ -4,6 +4,7 @@ import {VideogameDTORespCover} from '../../model/VideogameDTORespCover';
 import {FormsModule} from '@angular/forms';
 import {NgForOf, NgIf, NgStyle} from '@angular/common';
 import {AutofillerService} from '../../services/autofiller.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-pagina-cover',
@@ -11,7 +12,8 @@ import {AutofillerService} from '../../services/autofiller.service';
     FormsModule,
     NgStyle,
     NgForOf,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './pagina-cover.component.html',
   standalone: true,

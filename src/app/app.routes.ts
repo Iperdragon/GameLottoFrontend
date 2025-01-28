@@ -7,6 +7,7 @@ import {PaginaGlossaryComponent} from './components/pagina-glossary/pagina-gloss
 import {PaginaSpecsComponent} from './components/pagina-specs/pagina-specs.component';
 import {PaginaSoundtrackComponent} from './components/pagina-soundtrack/pagina-soundtrack.component';
 import {PaginaCharactersComponent} from './components/pagina-characters/pagina-characters.component';
+import {HowtoplayComponent} from './components/howtoplay/howtoplay.component';
 
 export const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -16,6 +17,7 @@ export const routes: Routes = [
   {path: 'glossary',component:PaginaGlossaryComponent},
   {path:'spec', component:PaginaSpecsComponent},
   {path:'soundtrack', component:PaginaSoundtrackComponent},
-  {path:'pgs', component:PaginaCharactersComponent}
+  {path:'pgs', component:PaginaCharactersComponent},
+  {path: 'howtoplay', component:HowtoplayComponent}
 
 ];

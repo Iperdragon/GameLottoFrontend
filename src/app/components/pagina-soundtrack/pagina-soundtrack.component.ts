@@ -20,10 +20,10 @@ import {AutofillerService} from '../../services/autofiller.service';
 })
 export class PaginaSoundtrackComponent
 {
-  hearts: string[] = Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png'); // Percorso immagine cuore pieno
+  hearts: string[] = Array(1).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png'); // Percorso immagine cuore pieno
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
-  maxStep:number=5;
+  maxStep:number=1;
   step:number=0;
   idsUsed:number[]=[];
   sound:VideogameDTORespSound|null=null;
@@ -53,7 +53,7 @@ export class PaginaSoundtrackComponent
         this.errorMessage=null;
         this.mostraProssimo = false;
         this.stopAudio();
-        this.hearts=Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
+        this.hearts=Array(1).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
       }
     )
   }

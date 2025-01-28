@@ -25,6 +25,7 @@ export class PaginaCharactersComponent
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
   mostraDescrizione:boolean=false;
+  mostraRispondi:boolean=true;
   maxStep:number=5;
   step:number=0;
   idsUsed:number[]=[];
@@ -91,6 +92,7 @@ export class PaginaCharactersComponent
     alert('Game Over! ' + '\n'+
       'Il gioco è: '+this.pg?.game);
     this.mostraReStart = true;
+    this.mostraRispondi=false;
   }
 
   restartGame2(): void {

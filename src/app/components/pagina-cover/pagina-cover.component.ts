@@ -21,6 +21,7 @@ export class PaginaCoverComponent{
   hearts: string[] = Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp'); // Percorso immagine cuore pieno
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
+  mostraRispondi:boolean=true;
   maxStep:number=5;
   step:number=0;
   idsUsed:number[]=[];
@@ -90,6 +91,7 @@ export class PaginaCoverComponent{
     alert('Game Over! ' + '\n'+
       'Il gioco è: '+this.videogame?.name);
     this.mostraReStart = true;
+    this.mostraRispondi=false;
     this.setBlur(0);
   }
 

@@ -21,8 +21,8 @@
 
 <div class="container">
   <div class="input-container position-absolute" style="top:65%; left:50%; transform:translate(-50%,-50%);">
-    <input (input)="onInputChange(answer)" type="text" [(ngModel)]="answer" placeholder="Inserisci">
-    <ul *ngIf="filteredOptions.length > 0" class="dropdown">
+    <input (blur)="nascondiTendina()" (focus)="showTendina=true" (input)="onInputChange(answer)" type="text" [(ngModel)]="answer" placeholder="Inserisci">
+    <ul *ngIf="filteredOptions.length > 0 && showTendina" class="dropdown">
       <li
         *ngFor="let option of filteredOptions"
         (click)="selectOption(option)"

@@ -22,6 +22,7 @@ export class PaginaCoverComponent{
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
   mostraRispondi:boolean=true;
+  showTendina:boolean=false;
   maxStep:number=5;
   step:number=0;
   idsUsed:number[]=[];
@@ -48,11 +49,13 @@ export class PaginaCoverComponent{
         res =>
         {
             this.step = 0;
-            this.videogame = res as VideogameDTORespCover;
             this.setBlur(10);
-            this.mostraProssimo = false;
-            this.resetPurpleBorder();
-            this.hearts=Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
+            setTimeout(()=>{
+              this.videogame = res as VideogameDTORespCover;
+              this.mostraProssimo = false;
+              this.resetPurpleBorder();
+              this.hearts=Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
+            }, 500);
         }
       )
   }
@@ -156,5 +159,9 @@ export class PaginaCoverComponent{
     }
   }
 
+  nascondiTendina()
+  {
+    setTimeout(()=>{this.showTendina=false}, 200)
+  }
 
 }

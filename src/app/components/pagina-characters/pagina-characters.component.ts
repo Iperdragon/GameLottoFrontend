@@ -26,6 +26,7 @@ export class PaginaCharactersComponent
   mostraProssimo: boolean = false;
   mostraDescrizione:boolean=false;
   mostraRispondi:boolean=true;
+  showTendina:boolean=false;
   maxStep:number=5;
   step:number=0;
   idsUsed:number[]=[];
@@ -141,5 +142,10 @@ export class PaginaCharactersComponent
     if (frameElement) {
       this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp')"); // Cornice viola
     }
+  }
+
+  nascondiTendina()
+  {
+    setTimeout(()=>{this.showTendina=false}, 200)
   }
 }

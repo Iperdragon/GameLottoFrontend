@@ -8,12 +8,14 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  background-color: #3e3e6e;
+  color: #f0f0f0;
 }
 
 .dropdown {
   position: absolute;
   width: 100%;
-  background-color: white;
+  background-color: #3e3e6e;
   border: 1px solid #ccc;
   border-radius: 4px;
   max-height: 200px;
@@ -22,6 +24,7 @@ input {
   z-index: 1000;
   list-style: none;
   padding: 0;
+  color: #f0f0f0;
 }
 
 .dropdown-item {
@@ -30,7 +33,7 @@ input {
 }
 
 .dropdown-item:hover {
-  background-color: #f0f0f0;
+  background-color: #000000;
 }
 
 .pg-container {
@@ -51,7 +54,7 @@ input {
   width: 100%; /* L'input occupa tutta la larghezza del contenitore */
   padding: 10px; /* Aggiunge un po' di spazio interno */
   font-size: 16px; /* Dimensione del testo */
-  border: 1px solid #ccc; /* Bordo leggero */
+  border: 1px solid #3e3e6e; /* Bordo leggero */
   border-radius: 5px; /* Angoli arrotondati */
   box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
 }

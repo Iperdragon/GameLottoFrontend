@@ -1,4 +1,4 @@
-import {Component, ElementRef, Renderer2} from '@angular/core';
+import {Component, ElementRef, Renderer2, ChangeDetectorRef, OnDestroy, OnInit} from '@angular/core';
 import {RoundLoaderService} from '../../services/round-loader.service';
 import {VideogameDTORespCover} from '../../model/VideogameDTORespCover';
 import {FormsModule} from '@angular/forms';
@@ -17,7 +17,7 @@ import {AutofillerService} from '../../services/autofiller.service';
   standalone: true,
   styleUrl: './pagina-cover.component.css'
 })
-export class PaginaCoverComponent {
+export class PaginaCoverComponent{
   hearts: string[] = Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp'); // Percorso immagine cuore pieno
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
@@ -27,14 +27,19 @@ export class PaginaCoverComponent {
   videogame:VideogameDTORespCover|null=null;
   answer:string="";
 
+
+
   constructor(
     private loader: RoundLoaderService,
     private auto:AutofillerService,
     private renderer: Renderer2,
-    private el: ElementRef
+    private el: ElementRef,
+    private cdRef: ChangeDetectorRef
   ) {
     this.caricaRound();
   }
+
+
 
   caricaRound()
   {
@@ -147,4 +152,6 @@ export class PaginaCoverComponent {
       this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp')"); // Cornice viola
     }
   }
+
+
 }

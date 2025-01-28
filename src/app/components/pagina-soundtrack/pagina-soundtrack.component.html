@@ -25,7 +25,7 @@
   <button *ngIf="mostraProssimo"(click)="caricaRound2()" class="position-absolute" style="top:90%; left:58%">Prossimo</button>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="mostraRisposte">
   <div class="input-container position-absolute" style="top:85%; left:50%; transform:translate(-50%,-50%);">
     <button *ngFor="let ans of allAnswers" (click)="controllaRisposta3(ans)">{{ans}}</button>
   </div>

@@ -23,6 +23,7 @@ export class PaginaSoundtrackComponent
   hearts: string[] = Array(1).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png'); // Percorso immagine cuore pieno
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
+  mostraRisposte:boolean=true;
   maxStep:number=1;
   step:number=0;
   idsUsed:number[]=[];
@@ -52,6 +53,7 @@ export class PaginaSoundtrackComponent
         this.allAnswers=[...this.wrongAnswers, this.sound.name].sort(() => Math.random() - 0.5);
         this.errorMessage=null;
         this.mostraProssimo = false;
+        this.mostraRisposte=true;
         this.stopAudio();
         this.hearts=Array(1).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
       }
@@ -88,6 +90,7 @@ export class PaginaSoundtrackComponent
           'Il gioco è: '+this.sound?.name);
     this.stopAudio();
     this.mostraReStart = true;
+    this.mostraRisposte=false;
   }
 
   restartGame3(): void {
@@ -96,19 +99,6 @@ export class PaginaSoundtrackComponent
     this.mostraReStart=false;
     this.answer="";
     this.caricaRound2();
-  }
-
-  filteredOptions: string[] = [];
-
-  onInputChange(value: string): void {
-    this.answer = value;
-    this.filteredOptions = this.auto.frasi.filter(option =>
-      option.toLowerCase().includes(value.toLowerCase())
-    );
-  }
-  selectOption(option: string): void {
-    this.answer = option;
-    this.filteredOptions = [];
   }
 
   audio: HTMLAudioElement = new Audio();

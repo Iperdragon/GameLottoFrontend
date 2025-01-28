@@ -2,8 +2,10 @@
   <div class="audio-player">
     <div>
 
-      <button (click)="playAudio()">Play</button>
-      <button (click)="stopAudio()" [disabled]="!isPlaying">Stop</button>
+      <img (click)="playAudio()" [src]="imgPlay[0]" *ngIf="!isPlaying">
+      <img [src]="imgPlay[1]" *ngIf="isPlaying">
+      <img (click)="stopAudio()" [src]="imgStop[0]" *ngIf="isPlaying">
+      <img [src]="imgStop[1]" *ngIf="!isPlaying">
     </div>
 
     <div *ngIf="errorMessage" class="error">
@@ -20,21 +22,11 @@
 
 <div class="button-container">
   <button *ngIf="mostraReStart"(click)="restartGame3()" class="position-absolute" style="top:90%; left:38%">Restart</button>
-  <button (click)="controllaRisposta3()" class="position-absolute" style="top:90%; left:48%">Rispondi</button>
   <button *ngIf="mostraProssimo"(click)="caricaRound2()" class="position-absolute" style="top:90%; left:58%">Prossimo</button>
 </div>
 
 <div class="container">
   <div class="input-container position-absolute" style="top:85%; left:50%; transform:translate(-50%,-50%);">
-    <input (input)="onInputChange(answer)" type="text" [(ngModel)]="answer">
-    <ul *ngIf="filteredOptions.length > 0" class="dropdown">
-      <li
-        *ngFor="let option of filteredOptions"
-        (click)="selectOption(option)"
-        class="dropdown-item"
-      >
-        {{ option }}
-      </li>
-    </ul>
+    <button *ngFor="let ans of allAnswers" (click)="controllaRisposta3(ans)">{{ans}}</button>
   </div>
 </div>

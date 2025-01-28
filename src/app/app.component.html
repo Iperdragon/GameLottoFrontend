@@ -2,7 +2,9 @@
 <h2 style="text-align: center">
   <a routerLink="/login">Login </a>
 </h2>
-
-
-
-<router-outlet></router-outlet>
+<div style="position: relative">
+  <div><a routerLink="/"></a>
+  <div id="animated-container" class="animated-container" (click)="startAnimation()"></div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

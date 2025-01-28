@@ -1,0 +1,20 @@
+.animated-container {
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  top: 50px;
+  left: 430px;
+  cursor: pointer;
+  transition: background-image 0.1s ease;
+  z-index: 1000;
+}
+
+.animated-container.idle {
+  background-image: url("https://i.postimg.cc/RZY54D6j/moneta-gamelotto.webp");
+}
+
+.animated-container.active {
+  background-image: url("https://i.postimg.cc/52gyg1r8/monetagamelottosi-RIDOTTA.webp");
+}

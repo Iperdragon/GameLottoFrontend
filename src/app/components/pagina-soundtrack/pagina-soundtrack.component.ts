@@ -28,13 +28,17 @@ export class PaginaSoundtrackComponent
   idsUsed:number[]=[];
   sound:VideogameDTORespSound|null=null;
   answer:string="";
-
+  wrongAnswers:string[]=[];
+  allAnswers:string[]=[];
+  imgPlay:string[]=["https://i.postimg.cc/KYByv5yQ/Pulsante-PLAY.webp", "https://i.postimg.cc/Z51SSMXC/Pulsante-PLAY-Active.webp"]
+  imgStop:string[]=["https://i.postimg.cc/VLZw76R9/Pulsante-STOP.webp", "https://i.postimg.cc/L68RBfz6/Pulsante-STOP-Active.webp"]
   constructor(private loader:RoundLoaderService,
               private http:HttpClient,
               private auto:AutofillerService)
   {
     this.caricaRound2();
   }
+
 
   caricaRound2()
   {
@@ -43,16 +47,20 @@ export class PaginaSoundtrackComponent
       {
         this.step=0;
         this.sound=res as VideogameDTORespSound;
+        this.wrongAnswers=this.auto.getThreeRandom(this.sound.name);
+        console.log(this.wrongAnswers);
+        this.allAnswers=[...this.wrongAnswers, this.sound.name].sort(() => Math.random() - 0.5);
         this.errorMessage=null;
         this.mostraProssimo = false;
+        this.stopAudio();
         this.hearts=Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
       }
     )
   }
 
-  controllaRisposta3()
+  controllaRisposta3(ans:string)
   {
-    if(this.sound!.name==this.answer)
+    if(this.sound!.name==ans)
     {
       this.idsUsed.push(this.sound!.id!);
       this.mostraProssimo = true;
@@ -76,7 +84,9 @@ export class PaginaSoundtrackComponent
   }
 
   private terminaGame3(): void {
-    alert('Game Over!');
+    alert('Game Over! ' + '\n'+
+          'Il gioco è: '+this.sound?.name);
+    this.stopAudio();
     this.mostraReStart = true;
   }
 
@@ -116,6 +126,7 @@ export class PaginaSoundtrackComponent
         this.audio.src = audioUrl;
         this.audio.load();
         this.audio.play();
+        this.audio.volume=0.2;
         this.isPlaying = true;
         this.errorMessage = null;
       },

@@ -1,4 +1,4 @@
-import {Component, ElementRef, Renderer2} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, Renderer2} from '@angular/core';
 import {VideogameDTORespCover} from '../../model/VideogameDTORespCover';
 import {PGDTOResp} from '../../model/PGDTOResp';
 import {RoundLoaderService} from '../../services/round-loader.service';
@@ -21,7 +21,7 @@ import {AutoFillerPgService} from '../../services/auto-filler-pg.service';
 })
 export class PaginaCharactersComponent
 {
-  hearts: string[] = Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png');
+  hearts: string[] = Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp');
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
   mostraDescrizione:boolean=false;
@@ -32,7 +32,11 @@ export class PaginaCharactersComponent
   answer:string="";
 
   constructor(private loader:RoundLoaderService,
-              private auto:AutoFillerPgService,)
+              private auto:AutoFillerPgService,
+              private renderer: Renderer2,
+              private cdRef: ChangeDetectorRef,
+              private el: ElementRef
+)
   {
     this.caricaRound4();
   }
@@ -47,7 +51,8 @@ export class PaginaCharactersComponent
         this.pg=res as PGDTOResp;
         this.mostraProssimo = false;
         this.mostraDescrizione=false;
-        this.hearts=Array(5).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
+        this.resetPurpleBorder();
+        this.hearts=Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
       }
     )
   }
@@ -60,19 +65,22 @@ export class PaginaCharactersComponent
       this.mostraDescrizione=true;
       this.answer="";
       this.mostraProssimo= true;
+      this.setGreenBorder();
     }
     else
     {
       if(this.step<this.maxStep-1)
       {
-        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
         this.step++;
         this.answer="";
+        this.flashRedBorder()
       }
       else
       {
-        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
         this.answer="";
+        this.flashRedBorder()
         this.terminaGame2();
       }
     }
@@ -105,5 +113,31 @@ export class PaginaCharactersComponent
   selectOption(option: string): void {
     this.answer = option;
     this.filteredOptions = [];
+  }
+
+
+
+  private flashRedBorder(): void {
+    const frameElement = this.el.nativeElement.querySelector('.custom-frame');
+    if (frameElement) {
+      this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/jSvKBW28/cornice-rossa-semplice.webp')"); // Cambia a rosso
+      setTimeout(() => {
+        this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp')"); // Torna al blu
+      }, 200); // Torna blu dopo 500ms
+    }
+  }
+
+  private setGreenBorder(): void {
+    const frameElement = this.el.nativeElement.querySelector('.custom-frame');
+    if (frameElement) {
+      this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/25KY8P4h/cornice-verde-semplice.webp')"); // Cornice verde
+    }
+  }
+
+  private resetPurpleBorder(): void {
+    const frameElement = this.el.nativeElement.querySelector('.custom-frame');
+    if (frameElement) {
+      this.renderer.setStyle(frameElement, 'background-image', "url('https://i.postimg.cc/tC39tvjG/corniceviolasemplice.webp')"); // Cornice viola
+    }
   }
 }

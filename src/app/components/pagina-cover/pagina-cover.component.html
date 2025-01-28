@@ -31,8 +31,8 @@
 
   <div class="button-container">
     <button *ngIf="mostraReStart"(click)="restartGame()" class="position-absolute" style="top:70%; left:38%">Restart</button>
-    <button *ngIf="mostraRispondi" (click)="controllaRisposta()" class="position-absolute" style="top:70%; left:48%">Rispondi</button>
-    <button *ngIf="mostraProssimo" (click)="caricaRound()" class="position-absolute" style="top:70%; left:58%">Prossimo</button>
+    <button id="invio-button" *ngIf="mostraRispondi" (click)="controllaRisposta()" class="position-absolute" style="top:70%; left:48%"></button>
+    <button *ngIf="mostraProssimo" (click)="caricaRound()" class="position-absolute" style="top:70%; left:58px">Prossimo</button>
   </div>
 
 <div class="container">

@@ -30,7 +30,6 @@ export class PaginaCoverComponent{
   answer:string="";
 
 
-
   constructor(
     private loader: RoundLoaderService,
     private auto:AutofillerService,
@@ -53,6 +52,7 @@ export class PaginaCoverComponent{
             setTimeout(()=>{
               this.videogame = res as VideogameDTORespCover;
               this.mostraProssimo = false;
+              this.mostraRispondi=true
               this.resetPurpleBorder();
               this.hearts=Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
             }, 500);
@@ -163,5 +163,4 @@ export class PaginaCoverComponent{
   {
     setTimeout(()=>{this.showTendina=false}, 200)
   }
-
 }

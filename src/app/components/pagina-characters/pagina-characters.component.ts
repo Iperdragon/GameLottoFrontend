@@ -23,13 +23,13 @@ import {RouterLink} from '@angular/router';
 })
 export class PaginaCharactersComponent
 {
-  hearts: string[] = Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp');
+  hearts: string[] = Array(2).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp');
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
   mostraDescrizione:boolean=false;
   mostraRispondi:boolean=true;
   showTendina:boolean=false;
-  maxStep:number=5;
+  maxStep:number=2;
   step:number=0;
   idsUsed:number[]=[];
   pg:PGDTOResp|null=null;
@@ -55,8 +55,9 @@ export class PaginaCharactersComponent
         this.pg=res as PGDTOResp;
         this.mostraProssimo = false;
         this.mostraDescrizione=false;
+        this.mostraRispondi=true;
         this.resetPurpleBorder();
-        this.hearts=Array(5).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
+        this.hearts=Array(2).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
       }
     )
   }

@@ -95,6 +95,35 @@ input {
   background-repeat: no-repeat;
 }
 
+#invio-button{
+  background-color: transparent;
+  color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  box-shadow: none;
+  position: relative;
+  background-image: url('https://i.postimg.cc/gLrvCgh1/bottoneinvio95x29static.webp'); /* Percorso all'immagine statica */
+  background-size: cover;
+  width: 95px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 29px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 900;
+}
+#invio-button:hover {
+  background-image: url('https://i.postimg.cc/PpXb4X5X/bottoneinvio95x29hover.webp'); /* Cambia immagine al passaggio del mouse */
+}
+
+#invio-button:active {
+  background-image: url('https://i.postimg.cc/jwMH3pDz/bottoneinvio95x29pressed.webp'); /* Cambia immagine quando premuto */
+}
+
+img
+{
+  border: none;
+}
 
 .custom-frame {
   position: absolute;

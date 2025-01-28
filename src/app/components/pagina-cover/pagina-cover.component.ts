@@ -116,6 +116,7 @@ export class PaginaCoverComponent{
   }
 
   filteredOptions: string[] = [];
+  userInput: any;
 
   onInputChange(value: string): void {
     this.answer = value;

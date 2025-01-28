@@ -12,7 +12,7 @@ input {
   color: #f0f0f0;
 }
 
-.dropdown {
+.dropdown3 {
   position: absolute;
   width: 100%;
   background-color: #3e3e6e;
@@ -94,4 +94,12 @@ input {
 
 .background-container {
   position: relative;
+}
+
+.buttonMenuTendina
+{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

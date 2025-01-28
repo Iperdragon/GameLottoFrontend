@@ -7,13 +7,15 @@ import {VideogameDTORespCompl} from '../../model/VideogameDTORespCompl';
 import {NgForOf, NgIf} from '@angular/common';
 import {AutofillerService} from '../../services/autofiller.service';
 import {AutoFillerPgService} from '../../services/auto-filler-pg.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-pagina-characters',
   imports: [
     FormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './pagina-characters.component.html',
   standalone: true,

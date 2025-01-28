@@ -10,29 +10,6 @@ input {
   font-size: 16px;
 }
 
-.dropdown {
-  position: absolute;
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  max-height: 200px;
-  overflow-y: auto;
-  margin-top: 5px;
-  z-index: 1000;
-  list-style: none;
-  padding: 0;
-}
-
-.dropdown-item {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.dropdown-item:hover {
-  background-color: #f0f0f0;
-}
-
 .sound-container {
   display: flex;
   justify-content: center; /* Centra orizzontalmente */
@@ -74,4 +51,12 @@ input {
   background-position: center;
   background-repeat: no-repeat;
   position:relative;
+}
+
+.buttonMenuTendina
+{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

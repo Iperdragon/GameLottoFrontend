@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {NgForOf, NgIf} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AutofillerService} from '../../services/autofiller.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-pagina-soundtrack',
@@ -12,7 +13,8 @@ import {AutofillerService} from '../../services/autofiller.service';
     NgIf,
     NgForOf,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './pagina-soundtrack.component.html',
   standalone: true,

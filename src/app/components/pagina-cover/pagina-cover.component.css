@@ -18,7 +18,7 @@ input {
   color: #f0f0f0;
 }
 
-.dropdown {
+.dropdown2 {
   position: absolute;
   width: 100%;
   background-color: #3e3e6e;
@@ -114,4 +114,11 @@ input {
   position: relative;
 }
 
+.buttonMenuTendina
+{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 

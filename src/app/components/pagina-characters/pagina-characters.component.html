@@ -1,4 +1,18 @@
 <div class="background-container">
+
+  <div class="dropdown">
+    <div class="buttonMenuTendina">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        INFO
+      </button>
+      <ul class="dropdown-menu">
+        <li><button class="dropdown-item" type="button">Come giocare</button></li>
+        <li ><button class="dropdown-item" type="button" routerLink="/glossary">Glossario</button></li>
+      </ul>
+    </div>
+  </div>
+
+
 <div class="pg-container" style="position: relative;">
   <img
     id="img2"
@@ -8,6 +22,7 @@
   />
   <div class="custom-frame"></div>
 </div>
+
 </div>
 <div class="heart-container position-absolute" style="top:57%; left:50%; transform:translate(-50%, -50%); display: flex; gap: 10px;">
   <img *ngFor="let heart of hearts" [src]="heart" class="heart" alt="heart" />
@@ -22,7 +37,7 @@
 <div class="container">
   <div class="input-container position-absolute" style="top:65%; left:50%; transform:translate(-50%,-50%);">
     <input (blur)="nascondiTendina()" (focus)="showTendina=true" (input)="onInputChange(answer)" type="text" [(ngModel)]="answer" placeholder="Inserisci">
-    <ul *ngIf="filteredOptions.length > 0 && showTendina" class="dropdown">
+    <ul *ngIf="filteredOptions.length > 0 && showTendina" class="dropdown3 dropdown">
       <li
         *ngFor="let option of filteredOptions"
         (click)="selectOption(option)"

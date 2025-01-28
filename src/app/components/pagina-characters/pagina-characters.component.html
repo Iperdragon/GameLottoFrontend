@@ -29,9 +29,9 @@
 </div>
 
 <div class="button-container">
-  <button *ngIf="mostraReStart"(click)="restartGame2()" class="position-absolute" style="top:70%; left:38%">Restart</button>
-  <button *ngIf="mostraRispondi" (click)="controllaRisposta2()" class="position-absolute" style="top:70%; left:48%">Rispondi</button>
-  <button *ngIf="mostraProssimo" (click)="caricaRound4()" class="position-absolute" style="top:70%; left:58%">Prossimo</button>
+  <button id="restart-button" *ngIf="mostraReStart"(click)="restartGame2()" class="position-absolute" style="top:70%; left:38%">Restart</button>
+  <button id="invio-button" *ngIf="mostraRispondi && !showTendina" (click)="controllaRisposta2()" class="position-absolute" style="top:70%; left:48%">Rispondi</button>
+  <button id="prossimo-button" *ngIf="mostraProssimo" (click)="caricaRound4()" class="position-absolute" style="top:70%; left:58%">Prossimo</button>
 </div>
 
 <div class="container">

@@ -18,6 +18,6 @@ export const routes: Routes = [
   {path:'spec', component:PaginaSpecsComponent},
   {path:'soundtrack', component:PaginaSoundtrackComponent},
   {path:'pgs', component:PaginaCharactersComponent},
-  {path: 'howtoplay', component:HowtoplayComponent}
+  {path:'how-to-play', component:HowtoplayComponent}
 
 ];

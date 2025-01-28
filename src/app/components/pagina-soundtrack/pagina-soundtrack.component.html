@@ -15,19 +15,20 @@
 
 <div class="sound-container">
   <div class="audio-player">
-    <div>
-
-      <img (click)="playAudio()" [src]="imgPlay[0]" *ngIf="!isPlaying">
-      <img [src]="imgPlay[1]" *ngIf="isPlaying">
-      <img (click)="stopAudio()" [src]="imgStop[0]" *ngIf="isPlaying">
-      <img [src]="imgStop[1]" *ngIf="!isPlaying">
+    <div style="position:relative;width: 50vw;height:40vh">
+      <img [src]="cassettinaSpenta" style="position:absolute;top:0;right:26.5%">
+      <img (click)="playAudio()" [src]="imgPlay[0]" *ngIf="!isPlaying" style="position:absolute;top:28vh;left:15.5vw;z-index:100">
+      <img [src]="imgPlay[1]" *ngIf="isPlaying" style="position:absolute;top:28vh;left:15.5vw;z-index:100">
+      <img (click)="stopAudio()" [src]="imgStop[0]" *ngIf="isPlaying"  style="position:absolute;top:28vh;left:19.6vw;z-index:100">
+      <img [src]="imgStop[1]" *ngIf="!isPlaying" style="position:absolute;top:28vh;left:19.6vw;z-index:100">
+      <p *ngIf="isPlaying" style="position:absolute;top:10.5vh;left:19vw;z-index:100;font-size:0.55rem">Riproduzione in corso</p>
     </div>
 
     <div *ngIf="errorMessage" class="error">
       {{ errorMessage }}
     </div>
 
-    <p *ngIf="isPlaying">Riproduzione in corso...</p>
+
   </div>
 </div>
 
@@ -36,13 +37,18 @@
 </div>
 
 <div class="button-container">
-  <button *ngIf="mostraReStart" (click)="restartGame3()" class="position-absolute" style="top:70%; left:38%">Restart</button>
-  <button *ngIf="mostraProssimo" (click)="caricaRound2()" class="position-absolute" style="top:70%; left:58%">Prossimo</button>
+  <button id="restart-button" *ngIf="mostraReStart" (click)="restartGame3()" class="position-absolute" style="top:70%; left:38%">Restart</button>
+  <button id="prossimo-button" *ngIf="mostraProssimo" (click)="caricaRound2()" class="position-absolute" style="top:70%; left:58%">Prossimo</button>
 </div>
 
-<div class="container" *ngIf="mostraRisposte">
-  <div class="input-container position-absolute" style="top:65%; left:50%; transform:translate(-50%,-50%);">
-    <button *ngFor="let ans of allAnswers" (click)="controllaRisposta3(ans)">{{ans}}</button>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="container" *ngIf="mostraRisposte">
+          <div class="input-container position-absolute" style="top:65%; left:50%; transform:translate(-50%,-50%);">
+            <button *ngFor="let ans of allAnswers" (click)="controllaRisposta3(ans)">{{ans}}</button>
+          </div>
+        </div>
+    </div>
   </div>
-</div>
 </div>

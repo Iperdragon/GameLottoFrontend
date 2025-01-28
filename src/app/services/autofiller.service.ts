@@ -17,12 +17,12 @@ export class AutofillerService {
       }
     )
   }
-  getThreeRandom(rightAnswer:string):string[]
+  getOneRandom(rightAnswer:string):string[]
   {
     let pool=this.frasi.filter(f=>f!=rightAnswer);
 
     let res:string[]=[];
-    for(let i=0;i<3;i++)
+    for(let i=0;i<1;i++)
     {
       let random=parseInt((Math.random()*pool.length).toFixed(0));
 

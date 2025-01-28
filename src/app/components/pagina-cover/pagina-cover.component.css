@@ -120,6 +120,56 @@ input {
   background-image: url('https://i.postimg.cc/jwMH3pDz/bottoneinvio95x29pressed.webp'); /* Cambia immagine quando premuto */
 }
 
+#restart-button{
+  background-color: transparent;
+  color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  box-shadow: none;
+  position: relative;
+  background-image: url('https://i.postimg.cc/4dTQBCwg/Pulsante-RESTART-Static.webp'); /* Percorso all'immagine statica */
+  background-size: cover;
+  width: 29px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 29px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 900;
+}
+#restart-button:hover {
+  background-image: url('https://i.postimg.cc/25WxQjQG/Pulsante-RESTART-Hover.webp'); /* Cambia immagine al passaggio del mouse */
+}
+
+#restart-button:active {
+  background-image: url('https://i.postimg.cc/nzYYWdwQ/Pulsante-RESTART-Pressed.webp'); /* Cambia immagine quando premuto */
+}
+
+#prossimo-button{
+  background-color: transparent;
+  color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  box-shadow: none;
+  position: relative;
+  background-image: url('https://i.postimg.cc/fRt7sWrs/Pulsante-PROSSIMO-Static.webp'); /* Percorso all'immagine statica */
+  background-size: cover;
+  width: 29px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 29px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 900;
+}
+#prossimo-button:hover {
+  background-image: url('https://i.postimg.cc/qM7Xmxcz/Pulsante-PROSSIMO-Hover.webp'); /* Cambia immagine al passaggio del mouse */
+}
+
+#prossimo-button:active {
+  background-image: url('https://i.postimg.cc/tCmd8nDD/Pulsante-PROSSIMO-Pressed.webp'); /* Cambia immagine quando premuto */
+}
+
 img
 {
   border: none;

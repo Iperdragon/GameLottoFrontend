@@ -1,0 +1,29 @@
+.howtoplay-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.accordion-container {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 80vh; /* Imposta l'altezza della pagina per centrare l'accordion */
+}
+
+.accordion {
+  max-width: 600px; /* Limita la larghezza massima dell'accordion */
+  width: 100%; /* Assicura che l'accordion prenda tutta la larghezza disponibile fino al max-width */
+}
+
+/* Modifica i bottoni per non occupare tutta la larghezza */
+.accordion-button {
+  width: auto; /* Rimuove la larghezza 100% per i bottoni */
+  margin: 0 auto;
+  transition: height 0.3s ease;
+}
+
+.accordion-body {
+  max-height: 400px; /* Imposta un'altezza massima fissa */
+  overflow-y: auto;
+  padding: 1rem;
+}

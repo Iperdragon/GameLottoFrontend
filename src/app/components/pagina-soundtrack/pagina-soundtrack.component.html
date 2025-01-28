@@ -1,3 +1,5 @@
+
+<div class="background-container">
 <div class="sound-container">
   <div class="audio-player">
     <div>
@@ -16,17 +18,18 @@
   </div>
 </div>
 
-<div class="heart-container position-absolute" style="top:77%; left:50%; transform:translate(-50%, -50%); display: flex; gap: 10px;">
+<div class="heart-container position-absolute" style="top:57%; left:50%; transform:translate(-50%, -50%); display: flex; gap: 10px;">
   <img *ngFor="let heart of hearts" [src]="heart" class="heart" alt="heart" />
 </div>
 
 <div class="button-container">
-  <button *ngIf="mostraReStart"(click)="restartGame3()" class="position-absolute" style="top:90%; left:38%">Restart</button>
-  <button *ngIf="mostraProssimo"(click)="caricaRound2()" class="position-absolute" style="top:90%; left:58%">Prossimo</button>
+  <button *ngIf="mostraReStart"(click)="restartGame3()" class="position-absolute" style="top:70%; left:38%">Restart</button>
+  <button *ngIf="mostraProssimo"(click)="caricaRound2()" class="position-absolute" style="top:70%; left:58%">Prossimo</button>
 </div>
 
 <div class="container" *ngIf="mostraRisposte">
-  <div class="input-container position-absolute" style="top:85%; left:50%; transform:translate(-50%,-50%);">
+  <div class="input-container position-absolute" style="top:65%; left:50%; transform:translate(-50%,-50%);">
     <button *ngFor="let ans of allAnswers" (click)="controllaRisposta3(ans)">{{ans}}</button>
   </div>
+</div>
 </div>

@@ -20,7 +20,7 @@ import {AutofillerService} from '../../services/autofiller.service';
 })
 export class PaginaSoundtrackComponent
 {
-  hearts: string[] = Array(1).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png'); // Percorso immagine cuore pieno
+  hearts: string[] = Array(1).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp'); // Percorso immagine cuore pieno
   mostraReStart: boolean = false;
   mostraProssimo: boolean = false;
   mostraRisposte:boolean=true;
@@ -55,7 +55,7 @@ export class PaginaSoundtrackComponent
         this.mostraProssimo = false;
         this.mostraRisposte=true;
         this.stopAudio();
-        this.hearts=Array(1).fill('https://i.postimg.cc/KjHzc8yt/HEART1.png')
+        this.hearts=Array(1).fill('https://i.postimg.cc/hG7x2qPt/HEART.webp')
       }
     )
   }
@@ -72,13 +72,13 @@ export class PaginaSoundtrackComponent
     {
       if(this.step<this.maxStep-1)
       {
-        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
         this.answer="";
         this.step++;
       }
       else
       {
-        this.hearts[this.step] = 'https://i.postimg.cc/MZPXmdjX/HEART2.png'
+        this.hearts[this.step] = 'https://i.postimg.cc/VNS92C41/heart2.webp'
         this.answer="";
         this.terminaGame3();
       }

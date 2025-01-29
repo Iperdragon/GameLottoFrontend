@@ -38,3 +38,61 @@
 #login-button:active {
   background-image: url('https://i.postimg.cc/PxtQmNGY/Pulsante-LOGIN-PRESSED.webp'); /* Cambia immagine quando premuto */
 }
+
+#pgsButton
+{
+  background-color: transparent;
+  color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  box-shadow: none;
+  position: relative;
+  background-size: cover;
+  width: 115px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 29px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 900;
+  background-image: url("https://i.postimg.cc/183Z8DKz/PULSANTE-PERSONAGGI-STATIC.webp");
+}
+
+#pgsButton:hover
+{
+  background-image: url("https://i.postimg.cc/rKcTLB0x/PULSANTE-PERSONAGGI-HOVER.webp")
+}
+
+#pgsButton:active
+{
+  background-image: url("https://i.postimg.cc/qzLTB1yY/PULSANTE-PERSONAGGI-PRESSED.webp");
+}
+
+#covsButton
+{
+  background-color: transparent;
+  color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  box-shadow: none;
+  position: relative;
+  background-size: cover;
+  width: 120px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 29px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 900;
+  background-image: url("https://i.postimg.cc/7Lk3pmB4/PULSANTE-SOUNDTRACK-STATIC.webp");
+}
+
+#covsButton:active
+{
+  background-image: url("https://i.postimg.cc/VkM9G3W4/PULSANTE-SOUNDTRACK-PRESSED.webp");
+}
+
+#covsButton:hover
+{
+  background-image: url("https://i.postimg.cc/kXLFynKB/PULSANTE-SOUNDTRACK-HOVER.webp");
+}

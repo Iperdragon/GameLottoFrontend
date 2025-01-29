@@ -96,3 +96,62 @@
 {
   background-image: url("https://i.postimg.cc/kXLFynKB/PULSANTE-SOUNDTRACK-HOVER.webp");
 }
+
+#covsButton
+{
+  background-color: transparent;
+  color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  box-shadow: none;
+  position: relative;
+  background-size: cover;
+  width: 120px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 29px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 900;
+  background-image: url("https://i.postimg.cc/yWhhLbMk/PULSANTE-COPERTINE-STATIC.webp");
+}
+
+#covsButton:active
+{
+  background-image: url("https://i.postimg.cc/141ccQYk/PULSANTE-SOUNDTRACK-PRESSED.webp");
+}
+
+#covsButton:hover
+{
+  background-image: url("https://i.postimg.cc/CnJS274W/PULSANTE-COPERTINE-HOVER.webp");
+}
+
+
+#endyButton
+{
+  background-color: transparent;
+  color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  box-shadow: none;
+  position: relative;
+  background-size: cover;
+  width: 120px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 29px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  z-index: 900;
+  background-image: url("https://i.postimg.cc/4n8y4vtW/PULSANTE-ENDLESS-RUN-STATIC.webp");
+}
+
+#endyButton:active
+{
+  background-image: url("https://i.postimg.cc/bssJZG9p/PULSANTE-ENDLESS-RUN-PRESSED.webp");
+}
+
+#endyButton:hover
+{
+  background-image: url("https://i.postimg.cc/SjQjp1XX/PULSANTE-ENDLESS-RUN-HOVER.webp");
+}

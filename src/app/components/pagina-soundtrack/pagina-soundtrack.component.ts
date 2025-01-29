@@ -33,7 +33,7 @@ export class PaginaSoundtrackComponent
   answer:string="";
   wrongAnswers:string[]=[];
   allAnswers:string[]=[];
-  cassettinaSpenta:string[]=["https://i.postimg.cc/PqMCsBTh/CASSETTEPLAYERSINGLE.webp"]
+  cassettina:string[]=["https://i.postimg.cc/PqMCsBTh/CASSETTEPLAYERSINGLE.webp", "https://i.postimg.cc/7Z0H5Vqf/CASSETTE-player.gif"]
   imgPlay:string[]=["https://i.postimg.cc/KYByv5yQ/Pulsante-PLAY.webp", "https://i.postimg.cc/Z51SSMXC/Pulsante-PLAY-Active.webp"]
   imgStop:string[]=["https://i.postimg.cc/VLZw76R9/Pulsante-STOP.webp", "https://i.postimg.cc/L68RBfz6/Pulsante-STOP-Active.webp"]
   constructor(private loader:RoundLoaderService,
@@ -51,7 +51,7 @@ export class PaginaSoundtrackComponent
       {
         this.step=0;
         this.sound=res as VideogameDTORespSound;
-        this.wrongAnswers=this.auto.getOneRandom(this.sound.name);
+        this.wrongAnswers=this.auto.getThreeRandom(this.sound.name);
         console.log(this.wrongAnswers);
         this.allAnswers=[...this.wrongAnswers, this.sound.name].sort(() => Math.random() - 0.5);
         this.errorMessage=null;
@@ -69,6 +69,7 @@ export class PaginaSoundtrackComponent
     {
       this.idsUsed.push(this.sound!.id!);
       this.mostraProssimo = true;
+      this.mostraRisposte=false;
       this.answer="";
     }
     else

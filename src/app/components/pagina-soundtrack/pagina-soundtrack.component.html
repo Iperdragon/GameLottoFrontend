@@ -1,5 +1,4 @@
-
-<div class="background-container">
+<div class="background-container" xmlns="http://www.w3.org/1999/html">
 
   <div class="dropdown">
     <div class="buttonMenuTendina">
@@ -16,11 +15,12 @@
 <div class="sound-container">
   <div class="audio-player">
     <div style="position:relative;width: 50vw;height:40vh">
-      <img [src]="cassettinaSpenta" style="position:absolute;top:0;right:26.5%">
-      <img (click)="playAudio()" [src]="imgPlay[0]" *ngIf="!isPlaying" style="position:absolute;top:28vh;left:15.5vw;z-index:100">
-      <img [src]="imgPlay[1]" *ngIf="isPlaying" style="position:absolute;top:28vh;left:15.5vw;z-index:100">
-      <img (click)="stopAudio()" [src]="imgStop[0]" *ngIf="isPlaying"  style="position:absolute;top:28vh;left:19.6vw;z-index:100">
-      <img [src]="imgStop[1]" *ngIf="!isPlaying" style="position:absolute;top:28vh;left:19.6vw;z-index:100">
+      <img [src]="cassettina[0]" *ngIf="!isPlaying" style="position:absolute;top:0;right:26.5%">
+      <img [src]="cassettina[1]" *ngIf="isPlaying" style="position:absolute;top:0;right:26.5%">
+      <img (click)="playAudio()" [src]="imgPlay[0]" *ngIf="!isPlaying" style="position:absolute;top:28vh;left:15.4vw;z-index:100">
+      <img [src]="imgPlay[1]" *ngIf="isPlaying" style="position:absolute;top:28vh;left:15.4vw;z-index:100">
+      <img (click)="stopAudio()" [src]="imgStop[0]" *ngIf="isPlaying"  style="position:absolute;top:28vh;left:19.5vw;z-index:100">
+      <img [src]="imgStop[1]" *ngIf="!isPlaying" style="position:absolute;top:28vh;left:19.5vw;z-index:100">
       <p *ngIf="isPlaying" style="position:absolute;top:10.5vh;left:19vw;z-index:100;font-size:0.55rem">Riproduzione in corso</p>
     </div>
 
@@ -41,14 +41,23 @@
   <button id="prossimo-button" *ngIf="mostraProssimo" (click)="caricaRound2()" class="position-absolute" style="top:70%; left:58%">Prossimo</button>
 </div>
 
-  <div class="container text-center">
+
+<div class="container" *ngIf="mostraRisposte">
+  <div class="input-container position-absolute" style="top:70%; left:50%; transform:translate(-50%,-50%);">
     <div class="row">
-      <div class="col">
-        <div class="container" *ngIf="mostraRisposte">
-          <div class="input-container position-absolute" style="top:65%; left:50%; transform:translate(-50%,-50%);">
-            <button *ngFor="let ans of allAnswers" (click)="controllaRisposta3(ans)">{{ans}}</button>
-          </div>
+      <div class="col-3 d-flex flex-column align-items-center">
+        <div class="mb-3" *ngFor="let ans of allAnswers.slice(0, 2)">
+          <button class="btn btn-primary custom-button" style="color:#5bb974" (click)="controllaRisposta3(ans)">{{ans}}</button>
         </div>
+      </div>
+      <div class="col-6"></div>
+      <div class="col-3 d-flex flex-column align-items-center">
+        <div class="mb-3" *ngFor="let ans of allAnswers.slice(2)">
+          <button class="btn btn-primary custom-button" style="color:#5bb974" (click)="controllaRisposta3(ans)">{{ans}}</button>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
 </div>

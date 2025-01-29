@@ -61,6 +61,34 @@ input {
   align-items: center;
 }
 
+.custom-button
+{
+  width: 280px; /* Larghezza fissa */
+  height: 29px; /* Altezza fissa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5px; /* Margine interno */
+
+  font-family: 'PublicPixel', sans-serif; /* Usa il font caricato */
+  font-size: 10px; /* Dimensione base */
+  line-height: 1; /* Testo compatto verticalmente */
+  letter-spacing: 0.5px; /* Spazio tra caratteri */
+  font-weight: normal; /* Peso del font */
+
+  white-space: nowrap; /* Evita che il testo vada a capo */
+  overflow: hidden; /* Nasconde il testo che eccede */
+  text-overflow: ellipsis; /* Aggiunge "..." in caso di testo troppo lungo */
+}
+
+.custom-button span
+{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
 #restart-button{
   background-color: transparent;
   color:transparent;
@@ -71,8 +99,8 @@ input {
   position: relative;
   background-image: url('https://i.postimg.cc/4dTQBCwg/Pulsante-RESTART-Static.webp'); /* Percorso all'immagine statica */
   background-size: cover;
-  width: 29px; /* Modifica la dimensione a seconda dell'immagine */
-  height: 29px;
+  width: 45px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 45px;
   text-align: center;
   line-height: 40px;
   font-weight: bold;
@@ -96,8 +124,8 @@ input {
   position: relative;
   background-image: url('https://i.postimg.cc/fRt7sWrs/Pulsante-PROSSIMO-Static.webp'); /* Percorso all'immagine statica */
   background-size: cover;
-  width: 29px; /* Modifica la dimensione a seconda dell'immagine */
-  height: 29px;
+  width: 45px; /* Modifica la dimensione a seconda dell'immagine */
+  height: 45px;
   text-align: center;
   line-height: 40px;
   font-weight: bold;

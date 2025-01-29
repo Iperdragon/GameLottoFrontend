@@ -68,7 +68,7 @@
   background-image: url("https://i.postimg.cc/qzLTB1yY/PULSANTE-PERSONAGGI-PRESSED.webp");
 }
 
-#covsButton
+#soundButton
 {
   background-color: transparent;
   color:transparent;
@@ -87,12 +87,12 @@
   background-image: url("https://i.postimg.cc/7Lk3pmB4/PULSANTE-SOUNDTRACK-STATIC.webp");
 }
 
-#covsButton:active
+#soundButton:active
 {
   background-image: url("https://i.postimg.cc/VkM9G3W4/PULSANTE-SOUNDTRACK-PRESSED.webp");
 }
 
-#covsButton:hover
+#soundButton:hover
 {
   background-image: url("https://i.postimg.cc/kXLFynKB/PULSANTE-SOUNDTRACK-HOVER.webp");
 }

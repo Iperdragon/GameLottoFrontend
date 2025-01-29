@@ -71,7 +71,7 @@ input {
   text-align: center;
   padding: 0 5px; /* Margine interno */
 
-  font-size: 7px; /* Dimensione base */
+  font-size: 6px; /* Dimensione base */
   line-height: 1; /* Testo compatto verticalmente */
   letter-spacing: 0.5px; /* Spazio tra caratteri */
   font-weight: normal; /* Peso del font */

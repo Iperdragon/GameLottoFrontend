@@ -10,6 +10,7 @@ import {RouterLink} from "@angular/router";
   standalone: true,
   styleUrl: './homepage.component.css'
 })
-export class HomepageComponent {
-
+export class HomepageComponent
+{
+  closed:string[]=["https://i.postimg.cc/762NC9xt/CLOSED-SIGN.webp"]
 }

@@ -71,8 +71,7 @@ input {
   text-align: center;
   padding: 0 5px; /* Margine interno */
 
-  font-family: 'PublicPixel', sans-serif; /* Usa il font caricato */
-  font-size: 10px; /* Dimensione base */
+  font-size: 7px; /* Dimensione base */
   line-height: 1; /* Testo compatto verticalmente */
   letter-spacing: 0.5px; /* Spazio tra caratteri */
   font-weight: normal; /* Peso del font */
@@ -80,6 +79,12 @@ input {
   white-space: nowrap; /* Evita che il testo vada a capo */
   overflow: hidden; /* Nasconde il testo che eccede */
   text-overflow: ellipsis; /* Aggiunge "..." in caso di testo troppo lungo */
+  background-image: url("https://i.postimg.cc/cJCY3CLK/CORNICERETTANGOLARECONSFONDO.webp");
+  background-color: transparent;
+  background-size: cover;
+  border:none;
+  margin:0;
+  box-shadow: none;
 }
 
 .custom-button span
